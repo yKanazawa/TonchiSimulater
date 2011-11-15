@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.media.MediaPlayer;
 import yakitori.android.tonchisimulater.R;
 
-public class TonchiSimulaterActivity extends Activity 
+public class TonchiSimulaterActivity extends Activity
 implements MediaPlayer.OnCompletionListener
 {
     public static final Context TonchiSimulaterActivity = null;
@@ -30,7 +30,7 @@ implements MediaPlayer.OnCompletionListener
         button1 = (Button)findViewById(R.id.button1);
         button1.setOnClickListener(new ButtonClickListener());
     }
-    
+
     class ButtonClickListener implements OnClickListener {
         public void onClick(View v) {
             if(!isPlaying) {
@@ -43,10 +43,9 @@ implements MediaPlayer.OnCompletionListener
 //                mediaPlayerA.setLooping(false);
             }
         }
-    	
+
     }
 
-    @Override
     // サウンド再生終了時に呼ばれる
     public void onCompletion(MediaPlayer mp) {
         if(isPlaying) {
