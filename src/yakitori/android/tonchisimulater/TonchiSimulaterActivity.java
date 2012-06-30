@@ -57,4 +57,16 @@ implements MediaPlayer.OnCompletionListener
             button1.setEnabled(true);
         }
     }
+
+    // アクティビティがバックグラウンドになる直前に呼び出される
+    protected void onPause() {
+        super.onPause();
+        mediaPlayerA.stop();
+        mediaPlayerA.reset();
+        mediaPlayerA.release();
+        mediaPlayerB.stop();
+        mediaPlayerB.reset();
+        mediaPlayerB.release();
+        this.finish();
+    }
 }
